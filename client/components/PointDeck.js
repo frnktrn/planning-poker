@@ -14,16 +14,16 @@ const PointDeck = (props) => {
             props.onVote(item.id);
           })}
           raised={true}
-          style={{height: "80px", paddingTop: "12px"}}
+          style={{height: "80px"}}
         >
-          <Card.Content textAlign='center'>{item.title}</Card.Content>
+          <Card.Content className={styles.card_content} textAlign='center'>{item.title}</Card.Content>
         </Card>
         <Label>Votes: {item.votes.length}</Label>
       </Grid.Column>
     )
   })
   return (
-    <Grid centered={true}>
+    <Grid id={styles.grid} centered={true}>
       {decks}
     </Grid>
   )
