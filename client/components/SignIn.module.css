@@ -1,0 +1,17 @@
+#signin {
+  padding-top: 4em;
+}
+
+
+#signin .header {
+  color: #cc3333;
+}
+
+#signin .button {
+  background-color: #cc3333;
+  color: white;
+}
+
+#signin .grid_column {
+  max-width: 450px;
+}

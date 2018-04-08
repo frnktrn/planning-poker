@@ -1,0 +1,16 @@
+#layout .menu {
+  background-color: #cc3333;
+  padding: 8px;
+}
+
+#layout .head_container {
+  color: white;
+}
+
+#layout .content_container {
+  margin-top: 7em;
+}
+
+#layout .menu_header {
+  color: white;
+}

@@ -1,0 +1,27 @@
+client:
+  image: node:9.10.1
+  volumes:
+    - ./client:/node/src
+  working_dir: /node/src
+  environment:
+  - "WP_PORT=${WP_PORT}"
+  - "WS_PORT=${WS_PORT}"
+  command: "/node/src/node_modules/.bin/webpack-dev-server --hot-only --port ${WP_PORT} --host 0.0.0.0 --disable-host-check"
+  user: ${USER_ID}
+  ports:
+    - "${WP_PORT}:${WP_PORT}"
+
+server:
+  image: node:9.10.1
+  volumes:
+    - ./server:/node/src
+  working_dir: /node/src
+  environment:
+  - "BABEL_DISABLE_CACHE=1"
+  - "WP_PORT=${WP_PORT}"
+  - "WS_PORT=${WS_PORT}"
+  command: "npx start"
+  command: "/node/src/node_modules/.bin/nodemon ./src/server.js --exec babel-node --ignore /node_modules -e js"
+  user: ${USER_ID}
+  ports:
+    - "${WS_PORT}:${WS_PORT}"
